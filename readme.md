@@ -3,7 +3,7 @@
 
 # mlh-events
 
-> An official http API for [Major League Hacking](https://mlh.io/) events
+> An unofficial http API for [Major League Hacking](https://mlh.io/) events
 
 ## Usage
 
