@@ -27,12 +27,14 @@ fetch('https://mlh-events-pwihhihsyf.now.sh/na-2017')
 
 // [ { name: 'HackMTY',
 //    url: 'http://hackmty.com/',
-//    date: 'August 27th - 28th',
+//    startDate: '2016-08-27',
+//    endDate: '2016-08-28',
 //    location: 'Monterrey,MX',
 //    isHighSchool: false },
 //  { name: 'BigRed//Hacks',
 //    url: 'https://www.bigredhacks.com/',
-//    date: 'September 16th - 18th',
+//    startDate: '2016-09-16',
+//    endDate: '2016-09-18',
 //    location: 'Ithaca,NY',
 //    isHighSchool: false },
 //    ...

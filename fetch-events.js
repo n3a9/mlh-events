@@ -13,7 +13,8 @@ module.exports = url => fetch(url)
 
       event.name = $(this).find('h3').text();
       event.url = $(this).find('a').attr('href');
-      event.date = $(this).find('p').first().text();
+      event.startDate = $(this).find('meta[itemprop = \'startDate\']').attr('content');
+      event.endDate = $(this).find('meta[itemprop = \'endDate\']').attr('content');
       event.location = $(this).find('p').last().text().replace(/\s/g, '');
       event.isHighSchool = $(this).find($('.ribbon-wrapper')).length !== 0;
 
