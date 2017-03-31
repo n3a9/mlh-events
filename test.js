@@ -14,4 +14,7 @@ test('na-2017', async t => {
   const na2017Response = await fetchEvents(buildMLHUrl('na-2017'));
   t.false(na2017Response[0].isHighSchool); // HackMTY
   t.true(na2017Response[26].isHighSchool); // GlassHacks
+  // HackMTY Dates
+  t.true(na2017Response[0].startDate === '2016-08-27');
+  t.true(na2017Response[0].endDate === '2016-08-28');
 });
