@@ -24,6 +24,7 @@ test('na-2017 contains valid hackathon data', async t => {
   na2017Response.forEach(hackathon => {
     t.is(typeof hackathon.name, 'string');
     t.is(typeof hackathon.url, 'string');
+    t.is(typeof hackathon.imageUrl, 'string');
     t.is(typeof hackathon.startDate, 'string');
     t.is(typeof hackathon.endDate, 'string');
     t.is(typeof hackathon.location, 'string');
