@@ -17,6 +17,7 @@ module.exports = url => fetch(url)
       event.endDate = $(this).find('meta[itemprop = \'endDate\']').attr('content');
       event.location = $(this).find('p').last().text().replace(/\s/g, '');
       event.isHighSchool = $(this).find($('.ribbon-wrapper')).length !== 0;
+      event.image = $(this).find($('.image-wrap')).children('img').attr('src');
 
       events.push(event);
     });
