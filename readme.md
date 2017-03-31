@@ -3,7 +3,9 @@
 
 # mlh-events
 
-> An unofficial http API for [Major League Hacking](https://mlh.io/) events
+> 💻 ☕️ An unofficial http API for [Major League Hacking events](https://mlh.io/seasons/na-2017/events)
+
+As an example, visit [mlh-events-pwihhihsyf.now.sh/na-2017](https://mlh-events-pwihhihsyf.now.sh/na-2017) to see all the North American 2017 hackathons.
 
 ## Usage
 
@@ -11,10 +13,12 @@ mlh-events provides a `GET` http endpoint which returns an `array`. You can requ
 
 * `/na-2017`
 * `/eu-2017`
+* `/s2016`
+* `/f2015`
 * `/s2015`
-<!--todo add more event example endpoints-->
-
-As an example, visit [https://mlh-events-pwihhihsyf.now.sh/na-2017](https://mlh-events-pwihhihsyf.now.sh/na-2017) to see all the North American 2017 hackathons.
+* `/f2014`
+* `/s2014`
+* `/f2013`
 
 ### Programmatic Example
 
@@ -43,7 +47,34 @@ fetch('https://mlh-events-pwihhihsyf.now.sh/na-2017')
 // ]
 ```
 
-## Technical Details
+Here's an example counting the amount of high-school hackathons in North America's 2017 season:
+```js
+// print the full response
+fetch('https://mlh-events-pwihhihsyf.now.sh/na-2017')
+  .then(res => res.json())
+  .then(hackathons => {
+    const highSchoolHackathons = hackathons.filter(hackathon => hackathon.isHighSchool);
+    console.log(`There were ${highSchoolHackathons.length} hackathons in "na-2017"`);
+  });
+
+// There were 12 hackathons in "na-2017"
+```
+
+## API Documentation
+
+The API response is an `array` of json `object`'s, where the schema is as follows:
+
+| Key | Value Type             | Example|
+|-----|------------------------|------------|
+| `name` | `string`            |`'HackCU III'`
+| `url` | `string`             |`'https://2017.hackcu.org'`
+| `startDate` | `string`            |`'2017-04-22'`
+| `endDate` | `string`            |`'2017-04-23'`
+| `location` | `string`        |`'Boulder,CO'`
+| `isHighSchool` | `boolean`   |`false`
+| `image` | `string`            |`'https://s3.amazonaws.com/assets.mlh.io/events/splashes/000/000/543/thumb/70991d078d30-hackcusplash.png?1479915080'`
+
+## History & Technical Details
 
 For years, folks have made hacks to hack an API together from the MLH event page. This implementation is different because of several things.
 
@@ -67,5 +98,6 @@ $ yarn
 $ npm start
 ```
 
-## Built with
-[yarn](https://yarnpkg.com/en/) & [cheerio.js](https://cheerio.js.org) & [now](https://zeit.co/now)
+## License
+
+MIT © with ❤️ from [Neeraj Aggarwal](http://neerajaggarwal.com/) & [Dawson Botsford](https://dawsbot.com)
