@@ -30,13 +30,15 @@ fetch('https://mlh-events-pwihhihsyf.now.sh/na-2017')
 //    startDate: '2016-08-27',
 //    endDate: '2016-08-28',
 //    location: 'Monterrey,MX',
-//    isHighSchool: false },
+//    isHighSchool: false,
+//    image: 'https://s3.amazonaws.com/assets.mlh.io/events/splashes/000/000/392/thumb/930adc5ed398-hackmtyMLH_300x300.png?1467906271' },
 //  { name: 'BigRed//Hacks',
 //    url: 'https://www.bigredhacks.com/',
 //    startDate: '2016-09-16',
 //    endDate: '2016-09-18',
 //    location: 'Ithaca,NY',
-//    isHighSchool: false },
+//    isHighSchool: false,
+//    image: 'https://s3.amazonaws.com/assets.mlh.io/events/splashes/000/000/398/thumb/1367a835fd31-mlh_splash_page.png?1469112017' },
 //    ...
 // ]
 ```
