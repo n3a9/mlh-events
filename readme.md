@@ -48,6 +48,7 @@ fetch('https://mlh-events-pwihhihsyf.now.sh/na-2017')
 ```
 
 Here's an example counting the amount of high-school hackathons in North America's 2017 season:
+
 ```js
 // print the full response
 fetch('https://mlh-events-pwihhihsyf.now.sh/na-2017')
