@@ -1,7 +1,7 @@
 {
   "name": "mlh-events",
   "version": "0.0.0",
-  "description": "",
+  "description": "💻 ☕️ The unofficial http API for Major League Hacking events",
   "main": "src/server.js",
   "scripts": {
     "test": "xo && ava",
