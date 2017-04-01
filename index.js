@@ -1,3 +1,4 @@
+const https = require('https');
 const express = require('express');
 const urlJoin = require('url-join');
 
@@ -7,18 +8,23 @@ const app = express();
 
 const cache = {};
 
-const paths = ['na-2017', 'eu-2017', 's2016', 'f2015', 's2015', 'f2014', 's2014', 'f2013'];
-
 const getMilliseconds = () => (new Date()).getTime(); // Current time of access
 // Returns a boolean as to whether the cache is not expired
-const cacheIsValid = key => {
+const isCacheValid = key => {
   const millisecondsInADay = 1000 * 60 * 60 * 24;
   const timeElapsed = getMilliseconds() - cache[key].timeEntered;
   return timeElapsed < millisecondsInADay;
 };
 
-const pathIsValid = path => {
-  return (paths.includes(path));
+// Check if MLH site returns 404
+const isPathValid = path => {
+  const mlhUrl = urlJoin('https://mlh.io/seasons/', path, '/events');
+  https.get(mlhUrl, res => {
+    if (res.statusCode === 404) {
+      return false;
+    }
+    return true;
+  });
 };
 
 // Enable cross-domain requests (security stuff built into browsers)
@@ -36,14 +42,14 @@ app.get('/favicon.ico', (req, res) => {
 app.get('/*', (req, res) => {
   const path = req.path;
 
-  if (path === '/' || !pathIsValid(path)) {
+  if (path === '/' || !isPathValid(path)) {
     const error = {};
     error.message = ('No season found for your provided \'' + path + '\'. Please try /na-2017 or /eu-2017 instead');
     res.status(404).json(error);
   }
 
   const mlhUrl = urlJoin('https://mlh.io/seasons/', path, '/events');
-  if (cache[path] && cacheIsValid(path)) {
+  if (cache[path] && isCacheValid(path)) {
     console.log(`Cache hit "${mlhUrl}"`);
     res.json(cache[path].data);
   } else {
