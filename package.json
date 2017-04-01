@@ -2,10 +2,10 @@
   "name": "mlh-events",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "xo && ava",
-    "start": "node index.js"
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -16,15 +16,17 @@
   "bugs": {
     "url": "https://github.com/aggarwalneeraj141/mlh-events/issues"
   },
+  "files": [
+    "src"
+  ],
   "engines": {
-    "node": "7"
+    "node": ">=7"
   },
   "homepage": "https://github.com/aggarwalneeraj141/mlh-events#readme",
   "dependencies": {
     "ava": "^0.18.2",
     "cheerio": "^0.22.0",
     "express": "^4.15.2",
-    "https": "^1.0.0",
     "node-fetch": "^1.6.3",
     "url-join": "^1.1.0",
     "xo": "^0.18.1"

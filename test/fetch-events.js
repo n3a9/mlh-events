@@ -1,16 +1,16 @@
 import test from 'ava';
 import urlJoin from 'url-join';
-import fetchEvents from './fetch-events';
+import fetchEvents from '../src/fetch-events';
 
 const buildMLHUrl = season => urlJoin('https://mlh.io/seasons/', season, '/events');
 
-test('f2015 responds with object', async t => {
+test('fetch-events - f2015 responds with object', async t => {
   const f2015Response = await fetchEvents(buildMLHUrl('f2015'));
   t.notDeepEqual(f2015Response, []);
   t.is(typeof f2015Response, 'object');
 });
 
-test('na-2017 contains valid hackathon data', async t => {
+test('fetch-events - na-2017 contains valid hackathon data', async t => {
   const na2017Response = await fetchEvents(buildMLHUrl('na-2017'));
 
   const HackMTY = na2017Response[0];
