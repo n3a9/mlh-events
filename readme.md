@@ -6,7 +6,7 @@
 > 💻 ☕️ The unofficial http API for [Major League Hacking events](https://mlh.io/seasons/na-2017/events)
 
 
-As an example, visit [mlh-events-pwihhihsyf.now.sh/na-2017](https://mlh-events-pwihhihsyf.now.sh/na-2017) to see all the North American 2017 hackathons.
+As an example, visit [mhttps://mlh-events.now.sh/na-2017](https://mlh-events.now.sh/na-2017) to see all the North American 2017 hackathons.
 
 ## Usage
 
