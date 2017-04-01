@@ -3,7 +3,8 @@
 
 # mlh-events
 
-> 💻 ☕️ An unofficial http API for [Major League Hacking events](https://mlh.io/seasons/na-2017/events)
+> 💻 ☕️ The unofficial http API for [Major League Hacking events](https://mlh.io/seasons/na-2017/events)
+
 
 As an example, visit [mlh-events-pwihhihsyf.now.sh/na-2017](https://mlh-events-pwihhihsyf.now.sh/na-2017) to see all the North American 2017 hackathons.
 
@@ -32,19 +33,25 @@ fetch('https://mlh-events-pwihhihsyf.now.sh/na-2017')
 
 // [ { name: 'HackMTY',
 //    url: 'http://hackmty.com/',
-//    date: 'August 27th - 28th',
+//    startDate: '2016-08-27',
+//    endDate: '2016-08-28',
 //    location: 'Monterrey,MX',
-//    isHighSchool: false },
+//    isHighSchool: false,
+//    imageUrl: 'https://s3.amazonaws.com/assets.mlh.io/events/splashes/000/000/392/thumb/930adc5ed398-hackmtyMLH_300x300.png?1467906271' },
 //  { name: 'BigRed//Hacks',
 //    url: 'https://www.bigredhacks.com/',
-//    date: 'September 16th - 18th',
+//    startDate: '2016-09-16',
+//    endDate: '2016-09-18',
 //    location: 'Ithaca,NY',
-//    isHighSchool: false },
+//    isHighSchool: false,
+//    imageUrl: 'https://s3.amazonaws.com/assets.mlh.io/events/splashes/000/000/398/thumb/1367a835fd31-mlh_splash_page.png?1469112017' },
 //    ...
 // ]
 ```
 
 Here's an example counting the amount of high-school hackathons in North America's 2017 season:
+
+
 ```js
 // print the full response
 fetch('https://mlh-events-pwihhihsyf.now.sh/na-2017')
@@ -65,9 +72,12 @@ The API response is an `array` of json `object`'s, where the schema is as follow
 |-----|------------------------|------------|
 | `name` | `string`            |`'HackCU III'`
 | `url` | `string`             |`'https://2017.hackcu.org'`
-| `date` | `string`            |`'April 22nd - 23rd'`
+| `startDate` | `string`            |`'2017-04-22'`
+| `endDate` | `string`            |`'2017-04-23'`
 | `location` | `string`        |`'Boulder,CO'`
 | `isHighSchool` | `boolean`   |`false`
+| `image` | `string`            |`'https://s3.amazonaws.com/assets.mlh.io/events/splashes/000/000/543/thumb/70991d078d30-hackcusplash.png?1479915080'`
+
 
 ## History & Technical Details
 
