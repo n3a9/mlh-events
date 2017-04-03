@@ -10,7 +10,7 @@ As an example, visit [https://mlh-events.now.sh/na-2017](https://mlh-events.now.
 
 ## Usage
 
-mlh-events provides a `GET` http endpoint which returns an `array`. You can request any of the following endpoints at `https://mlh-events-pwihhihsyf.now.sh`:
+mlh-events provides a `GET` http endpoint which returns an `array`. You can request any of the following endpoints at `https://mlh-events.now.sh`:
 
 * `/na-2017`
 * `/eu-2017`
@@ -27,7 +27,7 @@ We've chosen JavaScript here since it's approachable and most folks can reason a
 
 ```js
 // print the full response
-fetch('https://mlh-events-pwihhihsyf.now.sh/na-2017')
+fetch('https://mlh-events.now.sh/na-2017')
   .then(res => res.json())
   .then(hackathons => console.log(hackathons));
 
@@ -54,7 +54,7 @@ Here's an example counting the amount of high-school hackathons in North America
 
 ```js
 // print the full response
-fetch('https://mlh-events-pwihhihsyf.now.sh/na-2017')
+fetch('https://mlh-events.now.sh/na-2017')
   .then(res => res.json())
   .then(hackathons => {
     const highSchoolHackathons = hackathons.filter(hackathon => hackathon.isHighSchool);
