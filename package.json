@@ -1,6 +1,6 @@
 {
   "name": "mlh-events",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "💻 ☕️ The unofficial http API for Major League Hacking events",
   "main": "src/server.js",
   "scripts": {
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aggarwalneeraj141/mlh-events.git"
+    "url": "git+https://github.com/n3a9/mlh-events.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aggarwalneeraj141/mlh-events/issues"
+    "url": "https://github.com/n3a9/mlh-events/issues"
   },
   "files": [
     "src"
@@ -22,7 +22,7 @@
   "engines": {
     "node": ">=7"
   },
-  "homepage": "https://github.com/aggarwalneeraj141/mlh-events#readme",
+  "homepage": "https://github.com/n3a9/mlh-events#readme",
   "dependencies": {
     "ava": "^0.18.2",
     "cheerio": "^0.22.0",
